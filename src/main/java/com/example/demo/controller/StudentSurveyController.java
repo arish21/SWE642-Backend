@@ -15,6 +15,7 @@ import com.example.demo.model.StudentResponse;
 import com.example.demo.repository.StudentSurveyRepo;
 import com.example.demo.service.StudentSurveyService;
 
+
 @RestController
 @RequestMapping(value = "/api/survey/")
 public class StudentSurveyController {
@@ -28,8 +29,8 @@ public class StudentSurveyController {
 	
 	//Save all the surveys	
 	@PostMapping
-	public String saveStudentSurvey(@RequestBody StudentResponse student){
-		return "ok"; //new ResponseEntity<StudentResponse>(studentSurveyService.saveStudentSurvey(student), HttpStatus.CREATED);
+	public ResponseEntity<StudentResponse> saveStudentSurvey(@RequestBody StudentResponse student){
+		return new ResponseEntity<StudentResponse>(studentSurveyService.saveStudentSurvey(student), HttpStatus.CREATED);
 	}
 	//ResponseEntity<StudentResponse>
 	//getting all surveys

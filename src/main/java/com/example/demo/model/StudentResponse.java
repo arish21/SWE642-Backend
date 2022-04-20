@@ -40,21 +40,21 @@ public class StudentResponse {
 	private String date;
 	
 	@Column(name = "liked")
-	private String checked;
+	private String liked;
 	
 	@Column(name = "interests")
-	private String friends;
+	private String interests;
 	
 	@Column(name = "likely")
 	private String likely;
 	
 	@Column(name = "comment")
-	private String comments;
+	private String comment;
 	
 	public StudentResponse() {}
 	
 	public StudentResponse(String firstName, String lastName, String street, String city, String state, String zip,
-			String tel, String email, String date, String checked, String friends, String likely, String comments) {
+			String tel, String email, String date, String liked, String interests, String likely, String comment) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -65,10 +65,10 @@ public class StudentResponse {
 		this.tel = tel;
 		this.email = email;
 		this.date = date;
-		this.checked = checked;
-		this.friends = friends;
+		this.liked = liked;
+		this.interests = interests;
 		this.likely = likely;
-		this.comments = comments;
+		this.comment = comment;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -124,17 +124,17 @@ public class StudentResponse {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public String getChecked() {
-		return checked;
+	public String getLiked() {
+		return liked;
 	}
-	public void setChecked(String checked) {
-		this.checked = checked;
+	public void setLiked(String liked) {
+		this.liked = liked;
 	}
-	public String getFriends() {
-		return friends;
+	public String getInterests() {
+		return interests;
 	}
-	public void setFriends(String friends) {
-		this.friends = friends;
+	public void setInterests(String interests) {
+		this.interests = interests;
 	}
 	public String getLikely() {
 		return likely;
@@ -142,27 +142,27 @@ public class StudentResponse {
 	public void setLikely(String likely) {
 		this.likely = likely;
 	}
-	public String getComments() {
-		return comments;
+	public String getComment() {
+		return comment;
 	}
-	public void setComments(String comments) {
-		this.comments = comments;
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 	@Override
 	public String toString() {
 		return "StudentResponse [firstName=" + firstName + ", lastName=" + lastName + ", street=" + street + ", city="
 				+ city + ", state=" + state + ", zip=" + zip + ", tel=" + tel + ", email=" + email + ", date=" + date
-				+ ", checked=" + (checked) + ", friends=" + friends + ", likely=" + likely
-				+ ", comments=" + comments + "]";
+				+ ", checked=" + (liked) + ", friends=" + interests + ", likely=" + likely
+				+ ", comments=" + comment + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Objects.hash(city, comments, date, email, firstName, friends, lastName, likely, state,
-				street, tel, zip, checked);
+		result = prime * result + Objects.hash(city, comment, date, email, firstName, interests, lastName, likely, state,
+				street, tel, zip, liked);
 		return result;
 	}
 
@@ -175,10 +175,10 @@ public class StudentResponse {
 		if (getClass() != obj.getClass())
 			return false;
 		StudentResponse other = (StudentResponse) obj;
-		return Objects.equals(checked, other.checked) && Objects.equals(city, other.city)
-				&& Objects.equals(comments, other.comments) && Objects.equals(date, other.date)
+		return Objects.equals(liked, other.liked) && Objects.equals(city, other.city)
+				&& Objects.equals(comment, other.comment) && Objects.equals(date, other.date)
 				&& Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName)
-				&& Objects.equals(friends, other.friends) && Objects.equals(lastName, other.lastName)
+				&& Objects.equals(interests, other.interests) && Objects.equals(lastName, other.lastName)
 				&& Objects.equals(likely, other.likely) && Objects.equals(state, other.state)
 				&& Objects.equals(street, other.street) && Objects.equals(tel, other.tel)
 				&& Objects.equals(zip, other.zip);
